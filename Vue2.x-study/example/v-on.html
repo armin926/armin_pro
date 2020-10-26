@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-on实例</title>
+  <script src="../assets/js/vue.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <h1>v-on实例</h1>
+  <hr>
+  <div id="app">
+    本场比赛得分: {{sorce}}
+    <p>
+      <button v-on:click="add">+</button>
+      <button @click="jianfen">-</button><br/>
+      <input type="text" @keyup.enter="onEnter" v-model="fenshu2">
+    </p>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        sorce: 0,
+        fenshu2: 1
+      },
+      methods: {
+        add() {
+          this.sorce++
+        },
+        jianfen() {
+          if (this.sorce > 0) {
+            this.sorce--
+          }
+        },
+        onEnter(){
+          this.sorce += parseInt(this.fenshu2)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

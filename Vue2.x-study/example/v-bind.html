@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-bind实例</title>
+  <script src="../assets/js/vue.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <h1>v-bind实例</h1>
+  <hr>
+  <div id="app">
+    <img v-bind:src="imgSrc" width="200px">
+    <a :href="webUrl" target="_blank">百度</a>
+    <hr>
+    <div :class="className">1、绑定Class</div>
+    <div :class="{classA:isOk}">2、绑定Class中的判断</div>
+    <div :class="[classA,classB]">3、绑定Class中的数组</div>
+    <div :class="isOk?classA:classB">4、绑定Class中的三元运算符</div>
+    <hr>
+    <div>
+      <input type="checkbox" id="isOk" v-model="isOk">
+      <label for="isOk">isOk = {{isOk}}</label>
+    </div>
+    <hr>
+    <div :style="{color:red,fontSize:font}">5、绑定style</div>
+    <div :style="styleObj">6、对象绑定style</div>
+  </div>
+  <style>
+    .classA {
+      color: red;
+    }
+
+    .classB {
+      font-size: 18px;
+    }
+  </style>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        imgSrc: 'https://s3.pstatp.com/toutiao/xitu_juejin_web/img/logo.a7995ad.svg',
+        webUrl: 'http://www.baidu.com',
+        className: 'classA',
+        isOk: false,
+        classA: 'classA',
+        classB: 'classB',
+        red: 'red',
+        font: '20px',
+        styleObj: {
+          color: 'green',
+          fontSize: '24px'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
