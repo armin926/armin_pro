@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slot content extend Demo</title>
+  <script src="../assets/js/vue.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <h1>Slot content extend Demo</h1>
+  <hr>
+  <div id="app">
+    <armin>
+      <span slot="blogUrl">{{arminData.blogUrl}}</span>
+      <span slot="netName">{{arminData.netName}}</span>
+      <span slot="skill">{{arminData.skill}}</span>
+    </armin>
+  </div>
+
+  <template id="tep">
+    <div>
+      <p>博客地址:<slot name="blogUrl"></slot></p>
+      <p>网名:<slot name="netName"></slot></p>
+      <p>技术类型:<slot name="skill"></slot></p>
+    </div>
+
+  </template>
+
+  <script type="text/javascript">
+    var armin = {
+      template: "#tep"
+    }
+    var app = new Vue({
+      el: '#app',
+      data: {
+        arminData: {
+          blogUrl: 'http://baidu.com',
+          netName: 'armin',
+          skill: 'web前端'
+        }
+      },
+      components: {
+        armin
+      }
+    })
+  </script>
+</body>
+
+</html>

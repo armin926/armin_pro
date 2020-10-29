@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example-2</title>
+  <script src="../assets/js/vue.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <h1>example-2</h1>
+  <hr>
+  <div id="app">
+
+  </div>
+  <p><button onclick="destroy()">卸载</button></p>
+  <p><button onclick="reload()">刷新</button></p>
+  <p><button onclick="tick()">更改数据</button></p>
+  <script type="text/javascript">
+    var armin = Vue.extend({
+      template: `<p>{{message}}</p>`,
+      data() {
+        return {
+          message: 'Hello,I am armin'
+        }
+      },
+      mounted() {
+        console.log('mounted被创建');
+      },
+      destroyed() {
+        console.log('被销毁');
+      },
+      updated() {
+        console.log('被更新了');
+      }
+    })
+
+    var vm = new armin().$mount('#app')
+    function destroy() {
+      vm.$destroy();
+    }
+    function reload() {
+      vm.$forceUpdate()
+    }
+    function tick() {
+      vm.message = "update message info ";
+      vm.$nextTick(function () {
+        console.log('message更新完后我被调用了');
+      })
+    }
+  </script>
+</body>
+
+</html>
