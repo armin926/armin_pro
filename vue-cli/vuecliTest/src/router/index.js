@@ -5,6 +5,7 @@ import HelloWorld from '@/components/HelloWorld'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -35,7 +36,12 @@ export default new Router({
     {
       // 只允许传数字
       path: '/params/:newsId(\\d+)/:newsTitle',
-      component: ()=>import('@/components/params.vue')
+      component: ()=>import('@/components/params.vue'),
+      beforeEnter:(to,from,next)=>{
+        console.log(to)
+        console.log(from);
+        next()
+      }
     },
     {
       path: '/goHome',
@@ -44,6 +50,10 @@ export default new Router({
     {
       path: '/goParams/:newsId(\\d+)/:newsTitle',
       redirect: '/params/:newsId(\\d+)/:newsTitle'
+    },
+    {
+      path: '*',
+      component: ()=>import('@/components/Error.vue')
     }
   ]
 })
