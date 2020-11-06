@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扩展运算符应用</title>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <script>
+    //1. 数组的合并
+    const kuaizi = ['wtl','xy']
+    const fenghuang = ['zy','lh']
+
+    // const zxxpg = kuaizi.concat(fenghuang)
+    const zxxpg = [...kuaizi,...fenghuang]
+
+    // 2. 数组的克隆
+    const sanzhihua = ['e','g','m']
+    const sanyecao = [...sanzhihua] // ['e','g','m']
+
+    // 3. 将伪数组转为真正的数组
+    const divs = document.querySelectorAll('div')
+    const divArr = [...divs]
+  </script>
+</body>
+</html>

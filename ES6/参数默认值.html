@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>函数参数默认值</title>
+</head>
+
+<body>
+  <script>
+    // 给函数参数赋值初始值
+    // 1. 形参初始值 具有默认值的参数， 一般位置靠后
+    function add(a, b, c=10) {
+      return a+b+c
+    }
+    let result = add(1,2)
+    console.log(result);// 13
+    // 2.与解构赋值结合
+    function connect({host,username,password,port}){
+      console.log(host); // localhost
+    }
+    connect({
+      host: 'localhost',
+      username: 'root',
+      password: 'root',
+      port: 3306
+    })
+  </script>
+</body>
+
+</html>

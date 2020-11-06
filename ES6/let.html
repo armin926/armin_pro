@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=let, initial-scale=1.0">
+  <title>let</title>
+</head>
+<body>
+  <script>
+    // 声明变量
+    let a;
+    let b,c,d;
+    let e = 100;
+    let f = 521, g="iloveyou", h = []
+
+    // 1.变量不能重复声明
+    // let star = "罗"
+    // let star = "小猪"
+    // Identifier 'star' has already been declared
+
+    // 2.块级作用域   全局，函数，eval
+    // if else while for 都是块级作用域
+    // {
+    //   let girl = "周扬青"
+    // }
+    // console.log(girl);
+
+    // 3. 不存在变量提升
+    console.log(song); // undefined
+    var song = "恋爱达人"
+
+    // 4. 不影响作用域链
+    {
+      let school = "BAT"
+      function fn(){
+        console.log(school);
+      }
+      fn() // BAT
+    }
+  </script>
+</body>
+</html>

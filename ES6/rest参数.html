@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rest参数</title>
+</head>
+<body>
+  <script>
+    // 引入 rest 参数， 用于获取函数的实参，用来代替 arguments
+    function date(...args){
+      console.log(args);
+    }
+    date('a','b','c')
+
+    // rest 参数必须放到参数最后
+  </script>
+</body>
+</html>
