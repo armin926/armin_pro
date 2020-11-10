@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise.prototype.then</title>
+</head>
+<body>
+  <script>
+    const p = new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        resolve('用户数据')
+      },1000)
+    })
+    // then方法的返回结果是Promise对象，对象状态由回调函数的结果来决定
+    // 1.如果回调函数中返回的结果是 非promise类型的属性，状态为成功，返回值为对象的成功值
+    
+    const result = p.then(res=>{
+      console.log(res);
+    }).catch(error=>{
+      console.error(error);
+    })
+  </script>
+</body>
+</html>

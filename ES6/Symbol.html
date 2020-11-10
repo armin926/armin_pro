@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>symbol</title>
+</head>
+<body>
+  <script>
+    // 创建symbol
+    let s = Symbol()
+    let s2 = Symbol('你好')
+    let s3 = Symbol('你好')
+    let s4 = Symbol.for('a')
+    console.log(s2 === s3); // false
+
+    // 不能与其他数据进行运算
+    let result = s + 100 //error
+    let result = s > 100 // error
+    let result = s + '100' // error
+    let result = s + s //error
+
+    // USONB you are so niu bility
+    // u undeined
+    // s string symbol
+    // o object
+    // n number
+    // b boolean
+  </script>
+</body>
+</html>

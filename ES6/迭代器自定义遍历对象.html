@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自定义遍历数据</title>
+</head>
+
+<body>
+  <script>
+    const banji = {
+      name: '终极一班',
+      stus: [
+        'xiaoming',
+        'xiaoning',
+        'xiaotian',
+        'knight'
+      ],
+      [Symbol.iterator]() {
+        let index = 0
+        return {
+          next: () => {
+            if (index < this.stus.length) {
+              const result = { value: this.stus[index], done: false }
+              // 下标自增
+              index++
+              return result
+            }
+            return { value: undefined, done: true }
+          }
+        }
+      }
+    }
+
+    // 遍历
+    for (let v of banji) {
+      console.log(v);
+    }
+    // banji.stus.forEach((v, index)=>{
+    //   console.log(v, index)
+
+    // })
+  </script>
+</body>
+
+</html>

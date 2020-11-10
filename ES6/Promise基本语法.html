@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise基本语法</title>
+</head>
+<body>
+  <script>
+    // 实例化 Promise 对象
+    const p = new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        // 
+        // let data = '数据库中的用户数据'
+        // // resolve
+        // resolve(data)
+        let err = '数据读取失败'
+        reject(err)
+      },1000)
+    })
+    // 调用Promise对象的then方法
+    p.then(function(res){
+      console.log(res);
+    },function(err){
+      console.error(err);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象继承</title>
+</head>
+
+<body>
+  <script>
+    class Phone {
+      constructor(barnd, price) {
+        this.barnd = barnd
+        this.price = price
+      }
+
+      // 父类的成员属性
+      call() {
+        console.log('我可以打电话');
+      }
+    }
+    class SmartPhone extends Phone {
+      // 构造方法
+      constructor(barnd, price, color, size) {
+        super(barnd, price)
+        this.color = color
+        this.size = size
+      }
+      photo() {
+        console.log('拍照');
+      }
+      playGame() {
+        console.log('玩游戏');
+      }
+      call(){
+        console.log('视频通话');
+      }
+    }
+
+    const xiaomi = new SmartPhone('小米', 799, '黑色', '4.7inch')
+    console.log(xiaomi);
+  </script>
+</body>
+
+</html>
