@@ -1,10 +1,18 @@
 <template>
   <div>
-    <h2>欢迎光临</h2>
+    <!-- <h2>欢迎光临</h2>
     <div>随机选择一位</div>
     <modal/>
     <div v-if="loading">Loading...</div>
-    <img v-if="loaded" :src="result.imgUrl" alt="" />
+    <img v-if="loaded" :src="result.imgUrl" alt="" /> -->
+    <Suspense>
+      <template #defalut>
+        <async-show/>
+      </template>
+      <template #fallback>
+        <h1>Loading...</h1>
+      </template>
+    </Suspense>
   </div>
 </template>
 
@@ -12,18 +20,22 @@
 // reactive
 // ref
 // axios
+import { ref } from "vue";
 import userUrlAxios from "./hooks/useURLAxios";
-import modal from "./components/Modal.vue";
+// import modal from "./components/Modal.vue";
+import AsyncShow from "./components/AsyncShow.vue"
 export default {
   name: "App",
   components: {
-    modal,
+    // modal,
+    AsyncShow
   },
   setup() {
-    const { result, loading, loaded } = userUrlAxios(
-      "https://apiblog.jspang.com/default/getGirl"
-    );
-    return { result, loading, loaded };
+    // const { result, loading, loaded } = userUrlAxios(
+    //   "https://apiblog.jspang.com/default/getGirl"
+    // );
+    // return { result, loading, loaded };
+    return {};
   },
 };
 </script>
