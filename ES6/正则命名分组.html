@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正则扩展-命名捕获分组</title>
+</head>
+<body>
+  <script>
+    let str = '<a href="http://www.baidu.com">百度</a>'
+
+    // 提取 url 与 标签文本
+    const reg = /<a href="(?<url>.*)">(?<test>.*)<\/a>/
+    const result = reg.exec(str)
+    console.log(result);
+  </script>
+</body>
+</html>

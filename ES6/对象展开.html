@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象展开</title>
+</head>
+<body>
+  <script>
+    function connect({host,port,...user}){
+      console.log(user);
+    }
+    connect({
+      host: '127.0.0.1',
+      port: 3306,
+      username: 'root',
+      password: '123456'
+    })
+
+    const skillOne = {
+      q: 'tian',
+    }
+    const skillTwo = {
+      w: 'jin'
+    }
+    const mangseng = {...skillOne,...skillTwo}
+    console.log(mangseng);
+  </script>
+</body>
+</html>

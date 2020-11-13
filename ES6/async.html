@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>async函数</title>
+</head>
+<body>
+  <script>
+    async function fn(){
+      // 返回的结果不是一个 Promise 类型的对象，则返回的结果就是一个成功的Promise
+      // return
+      // 抛出错误,返回的结果是一个失败的promise
+      // throw new Error('出错啦')
+      // 返回的结果如果是一个promise对象
+      return new Promise((resolve,reject)=>{
+        // resolve('成功的数据')
+        reject('失败的错误')
+      })
+    }
+    const result = fn()
+
+    // 调用 then 方法
+    result.then(res=>{
+      console.log(res);
+    }).catch(error=>{
+      console.log(error);
+    })
+  </script>
+</body>
+</html>

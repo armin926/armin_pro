@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私有属性</title>
+</head>
+<body>
+  <script>
+    class Person {
+      // 公有属性
+      name;
+      // 私有属性
+      #age;
+      // 构造方法
+      constructor(name,age){
+        this.name = name
+        this.age = age
+      }
+      intro(){
+        console.log(this.#age);
+      }
+    }
+    const girl = new Person('小红',18)
+
+    console.log(girl.name);
+    console.log(girl.#age);
+  </script>
+</body>
+</html>
