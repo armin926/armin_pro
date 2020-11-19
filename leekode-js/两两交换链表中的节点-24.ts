@@ -21,15 +21,15 @@ class ListNode {
 
 
 function swapPairs(head: ListNode | null): ListNode | null {
-  if(!head) {
+  if (!head) {
     return null
   }
-  let helper = function(node: ListNode):ListNode{
+  let helper = function (node: ListNode): ListNode | null {
     let tempNext = node.next
-    if(tempNext){
+    if (tempNext) {
       let tempNextNext = node.next.next
       node.next.next = node
-      if(tempNextNext){
+      if (tempNextNext) {
         node.next = helper(tempNextNext)
       } else {
         node.next = null

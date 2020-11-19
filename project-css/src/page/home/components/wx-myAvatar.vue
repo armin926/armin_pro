@@ -3,7 +3,7 @@
     <!-- 微信 “我”页面--头像部分布局 -->
     <div class="mena">
       <div class="menc">
-        <img src="../../../assets/005.png" />
+        <img src="../../../assets/mytouxiang.png" />
       </div>
       <div class="menb">
         <p>AHo Bo</p>
