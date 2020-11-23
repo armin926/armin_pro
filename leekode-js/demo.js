@@ -1,8 +1,16 @@
 
 
-(function foo() {
-    var a = 3
-    console.log(a);
-})()
-var a = 2
-console.log(a); 
+let map = {
+    '(': ')',
+    '{': '}',
+    '[': ']'
+}
+console.log(('{' = map[1]));
+let s = '({})'
+
+for(let i of s){
+    let value;
+    if((value = map[i])){
+
+    }
+}
